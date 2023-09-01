@@ -13,10 +13,11 @@ async def on_ready():
 async def main():
 	try:
 		await bot.load_extension("cogs.rps")
+		await bot.load_extension("cogs.util")
 		print(f'Extension loaded!')
 	except Exception as e:
 		print(f'Failed to load extension cogs.')
 		print(str(e))
-	await bot.start('insert token here')
+	await bot.start('insert token')
 
 asyncio.run(main())

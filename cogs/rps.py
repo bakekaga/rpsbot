@@ -21,7 +21,7 @@ class RPS(commands.Cog):
 			 rounds: int = commands.parameter(default = 1, description = 'The number of rounds you want to play for, defaults to 1')):
 		"""
 		Play Rock, Paper, Scissors
-		:param ctx: provides context for command call (who called it, which channel was it caled in, etc)
+		:param ctx: provides context for command call (who called it, which channel was it called in, etc)
 		:param member: the opponent
 		:param rounds: the number of rounds to play for; defaults to 1 if not specified
 		"""
@@ -55,7 +55,6 @@ class RPS(commands.Cog):
 						p1_choice = msg.content
 					if msg.author == member:
 						p2_choice = msg.content
-				# print(f'p1 played {p1_choice}, p2 played {p2_choice}')
 				# once we receive valid responses from both players, return True
 				return p1_choice != None and p2_choice != None
 	
