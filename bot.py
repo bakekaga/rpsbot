@@ -18,6 +18,7 @@ async def main():
 	except Exception as e:
 		print(f'Failed to load extension cogs.')
 		print(str(e))
-	await bot.start('insert token')
+	await bot.start('Insert Token')
 
 asyncio.run(main())
+
