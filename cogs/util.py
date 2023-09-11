@@ -17,9 +17,9 @@ class PollButton(discord.ui.Button):
         # the user's choice and increment the poll
         # self.style = discord.ButtonStyle.grey
         self.count += 1
-        # user = interaction.user.id
+        user1 = interaction.user
         # await user.send(f'Your choice is {self.message}')
-        await interaction.response.send_message(f'Your choice is {self.message}')
+        await interaction.response.send_message(f'{user1.mention}\'s choice is {self.message}', ephemeral = True)
 
 
 class Poll(discord.ui.View):
@@ -61,8 +61,8 @@ class Util(commands.Cog):
 
     @commands.command(name='poll',
                       # brief and description are what show up in the help menu
-                      brief='make a poll that closes in a given amount of minutes',
-                      description='vote on choices!',
+                      brief='Make a poll that closes in a given amount of minutes',
+                      description='Vote on choices!',
                       # aliases give shorthands for the command
                       )
     async def poll(self, ctx, mins, question: str, *args: str):
